@@ -1,6 +1,11 @@
 # Django settings for pythonkc_site project.
 import os
 
+from os.path import abspath, dirname, join
+
+import dotenv
+dotenv.read_dotenv(abspath(join(dirname(__file__), '.env')))
+
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -118,10 +123,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    #'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
-    #'south',
     'pythonkc_site.contact',
 )
 
