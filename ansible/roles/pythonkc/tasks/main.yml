@@ -1,4 +1,9 @@
 ---
+- name: Update apt
+  apt: update_cache=yes cache_valid_time=3600
+  become: yes
+  tags: apt
+
 - {include: python2.yml, tags: python, when: python_version == 2}
 - {include: python3.yml, tags: python, when: python_version == 3}
 - include: tools.yml tags=tools
@@ -7,3 +12,8 @@
 # TODO
 # vim + vim configuration for python?
 # postgres? (for now just using sqlite for development)
+
+- name: Start a local webserver
+  command: "{{ virtualenv }}/bin/python {{ project_root }}/manage.py runserver 0.0.0.0:8000"
+  async: 60
+  poll: 0

@@ -1,17 +1,15 @@
 ---
-- name: Update apt
-  apt: update_cache=yes cache_valid_time=3600
-  become: yes
-  tags: apt
-
 - name: Install some base packages
   apt: pkg="{{item}}" state=latest
   become: yes
   tags: apt
   with_items:
-    - build-essential
     - libpq-dev
     - python-dev
     - python-pip
     - python-software-properties
     - python-virtualenv
+
+- name: Update pip
+  command: pip install -U pip setuptools
+  become: yes
