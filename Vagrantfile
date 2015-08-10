@@ -44,7 +44,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     pykcdotdev.vm.box = "debian/jessie64"
     pykcdotdev.vm.hostname = "pythonkc.dev"
     pykcdotdev.vm.network "private_network", ip: "192.168.100.101"
-    if OS.unix?
+    if OS.linux?
+      pykcdotdev.vm.synced_folder "./",  "/vagrant/"
+    elsif OS.unix?
       pykcdotdev.vm.synced_folder "./",  "/vagrant/", type: "nfs"
     elsif OS.windows?
       pykcdotdev.vm.synced_folder "./", "/vagrant/" # , type: "smb"
