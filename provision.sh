@@ -4,8 +4,6 @@
 export DEBIAN_FRONTEND=noninteractive
 
 aptitude update
-aptitude purge -y chef chef-zero puppet puppet-common
-aptitude dist-upgrade -y
 ln -sf /vagrant /home/vagrant/
 mkdir -p /var/www
 ln -sf /vagrant/pythonkc_site /var/www/pythonkc_site
