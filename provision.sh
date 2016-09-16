@@ -13,7 +13,7 @@ ln -sf /vagrant/pythonkc_site /var/www/pythonkc_site
 if [[ -z "$(which ansible)" ]]; then
     echo "Installing pip and Ansible..."
     aptitude install -y python-dev python-pip
-    pip2 install ansible
+    pip2 install ansible markupsafe
 fi
 
 cd /home/vagrant/vagrant/ansible

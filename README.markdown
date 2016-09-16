@@ -44,10 +44,10 @@ To run the Django development server:
 
 ```
 vagrant ssh
-django-admin runserver 192.168.100.101:8000
+DJANGO_DEBUG=True MEETUP_API_KEY="your_key_here" django-admin runserver 192.168.100.101:8000
 ```
 
-Now go to `http://192.168.100.101:8000` in your browser. You can edit the files
+Now go to `http://pythonkc.dev:8000` in your browser. You can edit the files
 on your local machine and the server should reload automatically.
 
 For now, this is a Python 2 project. If you want to start using Python 3
@@ -84,4 +84,3 @@ See: docs/local_development
 [our repository]: https://github.com/pythonkc/pythonkc.com
 [meetup api key]: https://secure.meetup.com/meetup_api/key/
 [django secret key]: http://www.miniwebtool.com/django-secret-key-generator/
-
