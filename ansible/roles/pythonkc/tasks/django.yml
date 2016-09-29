@@ -5,7 +5,7 @@
 
 - name: Install requirements into Python 2.7 virtualenv
   pip:
-    requirements: "{{ project_root }}/requirements/project.txt"
+    requirements: "{{ project_root }}/requirements.txt"
     virtualenv: "{{ virtualenv }}"
     virtualenv_command: /usr/bin/virtualenv -p python2.7
   when: python_version == 2
@@ -13,7 +13,7 @@
 
 - name: Install requirements into Python 3 virtualenv
   pip:
-    requirements: "{{ project_root }}/requirements/project.txt"
+    requirements: "{{ project_root }}/requirements.txt"
     virtualenv: "{{ virtualenv }}"
     virtualenv_command: python3 /usr/lib/python3/dist-packages/virtualenv.py -p python3
   when: python_version == 3
