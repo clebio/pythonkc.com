@@ -1,0 +1,5 @@
+.*~
+Vagrantfile
+ansible/
+docs/
+provision.sh
